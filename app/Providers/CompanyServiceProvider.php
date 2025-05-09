@@ -22,6 +22,19 @@ class CompanyServiceProvider extends ServiceProvider
                 if (!Schema::hasTable('company')) {
                     Log::warning('La tabla "company" no existe. Se están utilizando valores predeterminados.');
                     return $this->defaultCompanySettings();
+                }else{
+
+                     $company = CacheService::get('company');
+                $timezone = $company ? $company->timezone : 'UTC';
+                $dateFormat = $company ? $company->date_format : 'Y-m-d';
+                $timeFormat = $company ? $company->time_format : 'H:i:s';
+                return [
+                    'name' => $company->name ?? '',
+                    'email' => $company->email ?? '',
+                    'timezone' => $timezone,
+                    'date_format' => $dateFormat,
+                    'time_format' => $timeFormat,
+                ];
                 }
 
                 // Intentar obtener los datos de la tabla "company"
