@@ -18,10 +18,10 @@ class AdminSeeder extends Seeder
         User::create([
                                     'id' => 1,
                                     'username' => 'admin',
-                                    'first_name' => 'Super',
-                                    'last_name' => 'Human',
-                                    'email' => 'admin@example.com',
-                                    'password' => Hash::make('12345678'),
+                                    'first_name' => 'Ing Pedro Castro',
+                                    'last_name' => 'SuperAdmin',
+                                    'email' => 'admin@mail.com',
+                                    'password' => Hash::make('1047387862'),
                                     'status' => 1,
                                 ]);
     }

@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Schema;
 use App\Models\Items\Item;
 use App\Models\Party\Party;
 use App\Models\Party\PartyTransaction;
@@ -69,23 +71,22 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
+    //--------------------------------------------------------------------------------------------------------------------
     /**
      * Bootstrap any application services.
      */
     public function boot(): void
     {
-        if(env('INSTALLATION_STATUS')){
-            //Twilio::observe(TwilioObserver::class);
-
-            /**
-             * Start:
-             * SMTP Settings
-             * */
+        if(env('INSTALLATION_STATUS'))
+        {
+            // Verifico si la tabla smtp_settings existe
+            if (Schema::hasTable('smtp_settings')) 
+            {
             $smtpSettings = $this->app->make('smtp_settings');
 
-            // Extract SMTP settings from the model
+            // Configurar ajustes SMTP si la tabla existe
             $driver = "smtp";
-
+            
              // Update mail configuration with retrieved settings
             config(['mail.driver' => $driver]);
 
@@ -100,9 +101,9 @@ class AppServiceProvider extends ServiceProvider
              * End:
              * SMTP Settings
              * */
-        }
+            }
 
-        Relation::morphMap([
+             Relation::morphMap([
             'Item Opening'              =>  Item::class, //Used in ItemTransaction class,
 
             'Purchase Order'            =>  PurchaseOrder::class,//Used in ItemTransaction class,
@@ -136,5 +137,6 @@ class AppServiceProvider extends ServiceProvider
             'Quotation'                =>  Quotation::class,//Used in ItemTransaction class,
 
         ]);
+        }
     }
 }
