@@ -30,15 +30,22 @@ return [
     */
 
     'mailers' => [
+
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'localhost'),
-            'port' => env('MAIL_PORT', 1025),
+            'host' => env('MAIL_HOST', 'null'),
+            'port' => env('MAIL_PORT', 25),
             'encryption' => env('MAIL_ENCRYPTION', null),
-            'username' => env('MAIL_USERNAME', ''),
-            'password' => env('MAIL_PASSWORD', ''),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'auth_mode' => null,
+            //'local_domain' => env('MAIL_EHLO_DOMAIN'),
+        ],
+
+        'nul' => [
+            'transport' => 'null',
+
         ],
         /*
         'sendmail' => [
@@ -49,7 +56,7 @@ return [
 
         'log' => [
             'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
+            //'channel' => env('MAIL_LOG_CHANNEL'),
         ],
 
         'array' => [
@@ -79,7 +86,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'no-reply@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example App'),
+        'name' => env('MAIL_FROM_NAME', 'No Reply'),
     ],
 
     /*

@@ -39,5 +39,12 @@ class CacheService
                     throw new \Exception("Invalid cache type: $type");
             }
         }
+
+            // Cache para la compañía
+        if ($type === 'company') {
+            return Cache::remember('company', now()->addHours(24), function () {
+            return \App\Models\Company::first();
+            });
+        }
     }
 }

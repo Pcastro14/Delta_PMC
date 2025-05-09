@@ -25,12 +25,12 @@ class CompanyServiceProvider extends ServiceProvider
                 }else{
 
                      $company = CacheService::get('company');
-                $timezone = $company ? $company->timezone : 'UTC';
-                $dateFormat = $company ? $company->date_format : 'Y-m-d';
-                $timeFormat = $company ? $company->time_format : 'H:i:s';
-                return [
-                    'name' => $company->name ?? '',
-                    'email' => $company->email ?? '',
+                    $timezone = $company ? $company->timezone : 'UTC';
+                    $dateFormat = $company ? $company->date_format : 'Y-m-d';
+                    $timeFormat = $company ? $company->time_format : 'H:i:s';
+                    return [
+                    'name' => $company->name ?? 'Default Name',
+                    'email' => $company->email ?? 'no-reply@example.com',
                     'timezone' => $timezone,
                     'date_format' => $dateFormat,
                     'time_format' => $timeFormat,
@@ -68,13 +68,19 @@ class CompanyServiceProvider extends ServiceProvider
             }
 
             // Configurar la configuración regional (locale)
-            $locale = 'es'; // Cambiar según tus necesidades
+            $locale = 'en'; // Cambiar según tus necesidades
             Carbon::setLocale($locale);
 
             // Configurar los valores de correo solo si están disponibles
             if (!empty($company['email']) && !empty($company['name'])) {
-                Config::set('mail.from.address', $company['email']);
-                Config::set('mail.from.name', $company['name']);
+                //Config::set('mail.from.address', $company['email']);
+                //Config::set('mail.from.name', $company['name']);
+                
+                //-------------------------------------------------------------------
+
+                Config::set('mail.from.address', app('company')['email'] ?? 'no-reply@example.com');
+                Config::set('mail.from.name', app('company')['name'] ?? 'No Reply');
+        
             }
 
             // Asegúrate de que no se sobrescriben valores nulos para SMTP

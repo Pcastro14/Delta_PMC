@@ -20,6 +20,9 @@ class Company extends Model
     protected $fillable = [
         'name',
         'email',
+        'timezone',
+        'date_format',
+        'time_format',
         'mobile',
         'address',
         'colored_logo',
