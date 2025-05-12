@@ -25,7 +25,7 @@
 							@if(config('demo.enabled'))
 						<div class="position-absolute top-0 end-0 mt-3 me-3">
 					      <div class="d-grid">
-					        <a href="https://codecanyon.net/item/delta/51635135" target="_blank" class="btn btn-success btn-sm px-4">Buy Now</a>
+					        <a href="https://www.google.com" target="_blank" class="btn btn-success btn-sm px-4">Buy Now</a>
 					      </div>
 					    </div>
 					    @endif

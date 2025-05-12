@@ -50,13 +50,13 @@
                             <x-label for="tax_number" name="{{ __('tax.tax_number') }}" />
                             <x-input type="text" name="tax_number" :required="false" value=""/>
                         </div>
-                        @if(app('company')['tax_type'] == 'gst')
+                        @if((app('company')['tax_type'] ?? null) == 'gst')
                         <div class="col-md-6">
                             <x-label for="state_id" name="{{ __('app.state_name') }}" />
                             <x-dropdown-states selected="" dropdownName='state_id'/>
                         </div>
                         @endif
-                        <div class="col-md-6 {{ !app('company')['is_enable_secondary_currency'] ? 'd-none' : '' }}">
+                        <div class="col-md-6 {{ !(app('company')['is_enable_secondary_currency'] ?? false) ? 'd-none' : '' }}">
                             <x-label for="currency_id" name="{{ __('currency.currency') }}" />
                             <x-dropdown-currency selected="" dropdownName='currency_id'/>
                         </div>

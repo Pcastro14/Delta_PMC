@@ -123,19 +123,19 @@
                                                         <tr class="text-uppercase">
                                                             <th scope="col">{{ __('app.action') }}</th>
                                                             <th scope="col">{{ __('item.item') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_serial_tracking'] ? 'd-none':'' }}">{{ __('item.serial') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_batch_tracking'] ? 'd-none':'' }}">{{ __('item.batch_no') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_mfg_date'] ? 'd-none':'' }}">{{ __('item.mfg_date') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_exp_date'] ? 'd-none':'' }}">{{ __('item.exp_date') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_model'] ? 'd-none':'' }}">{{ __('item.model_no') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['show_mrp'] ? 'd-none':'' }}">{{ __('item.mrp') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_color'] ? 'd-none':'' }}">{{ __('item.color') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['enable_size'] ? 'd-none':'' }}">{{ __('item.size') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_serial_tracking'] ?? false) ? 'd-none':'' }}">{{ __('item.serial') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_batch_tracking'] ?? false) ? 'd-none':'' }}">{{ __('item.batch_no') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_mfg_date'] ?? false) ? 'd-none':'' }}">{{ __('item.mfg_date') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_exp_date'] ?? false) ? 'd-none':'' }}">{{ __('item.exp_date') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_model'] ?? false) ? 'd-none':'' }}">{{ __('item.model_no') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['show_mrp'] ?? false) ? 'd-none':'' }}">{{ __('item.mrp') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_color'] ?? false) ? 'd-none':'' }}">{{ __('item.color') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['enable_size'] ?? false) ? 'd-none':'' }}">{{ __('item.size') }}</th>
                                                             <th scope="col" class="col-md-1">{{ __('app.qty') }}</th>
                                                             <th scope="col">{{ __('unit.unit') }}</th>
                                                             <th scope="col">{{ __('app.price_per_unit') }}</th>
-                                                            <th scope="col" class="{{ !app('company')['show_discount'] ? 'd-none':'' }}">{{ __('app.discount') }}</th>
-                                                            <th scope="col" class="{{ (app('company')['tax_type'] == 'no-tax') ? 'd-none':'' }}">{{ __('tax.tax') }}</th>
+                                                            <th scope="col" class="{{ !(app('company')['show_discount'] ?? false) ? 'd-none':'' }}">{{ __('app.discount') }}</th>
+                                                            <th scope="col" class="{{ (app('company')['tax_type'] ?? '') == 'no-tax' ? 'd-none' : '' }}">{{ __('tax.tax') }}</th>
                                                             <th scope="col">{{ __('app.total') }}</th>
                                                         </tr>
                                                     </thead>
@@ -238,7 +238,7 @@
                                                     <x-input type="text" additionalClasses="text-end grand_total" readonly=true name="grand_total" :required="true" placeholder="Round-Off" value="0"/>
                                                 </td>
                                               </tr>
-                                              @if(app('company')['is_enable_secondary_currency'])
+                                              @if(app('company')['is_enable_secondary_currency'] ?? false)
                                                 <tr>
                                                     <td>
                                                     <div class="input-group mb-3">

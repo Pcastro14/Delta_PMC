@@ -39,7 +39,7 @@ class ItemTransactionService{
     public function __construct(ItemService $itemService)
     {
         $this->itemService = $itemService;
-        $this->canAllowNegativeStockBilling = app('company')['allow_negative_stock_billing'];
+        $this->canAllowNegativeStockBilling = app('company')['allow_negative_stock_billing'] ?? false;
     }
     public function transactionUniqueCode($model){
 

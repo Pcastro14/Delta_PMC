@@ -26,28 +26,28 @@
     <script type="text/javascript">
 		/*Configure the Application Date Format*/
 		var appCompanyName = "{{ app('company')['name'] }}";
-		var appTaxType = "{{ app('company')['tax_type'] }}";
+		var appTaxType = "{{ app('company')['tax_type'] ?? '' }}";
 		var dateFormatOfApp = "{{ app('company')['date_format'] }}";
-		var numberPrecision = {{ app('company')['number_precision'] }};
-		var quantityPrecision = {{ app('company')['quantity_precision'] }};
+		var numberPrecision = {{ app('company')['number_precision'] ?? 0 }};
+		var quantityPrecision = {{ app('company')['quantity_precision'] ?? 0 }};
 		var itemSettings = {
-			show_sku : {{ app('company')['show_sku'] }},
-			show_mrp : {{ app('company')['show_mrp'] }},
-			show_discount : {{ app('company')['show_discount'] }},
-			enable_serial_tracking : {{ app('company')['enable_serial_tracking'] }},
-			enable_batch_tracking : {{ app('company')['enable_batch_tracking'] }},
-			enable_mfg_date : {{ app('company')['enable_mfg_date'] }},
-			enable_exp_date : {{ app('company')['enable_exp_date'] }},
-			enable_color : {{ app('company')['enable_color'] }},
-			enable_size : {{ app('company')['enable_size'] }},
-			enable_model : {{ app('company')['enable_model'] }},
+			show_sku : {{ app('company')['show_sku'] ?? 0 }},
+			show_mrp : {{ app('company')['show_mrp'] ?? 0 }},
+			show_discount : {{ app('company')['show_discount'] ?? 0 }},
+			enable_serial_tracking : {{ app('company')['enable_serial_tracking'] ?? 0 }},
+			enable_batch_tracking : {{ app('company')['enable_batch_tracking'] ?? 0 }},
+			enable_mfg_date : {{ app('company')['enable_mfg_date'] ?? 0 }},
+			enable_exp_date : {{ app('company')['enable_exp_date'] ?? 0 }},
+			enable_color : {{ app('company')['enable_color'] ?? 0 }},
+			enable_size : {{ app('company')['enable_size'] ?? 0 }},
+			enable_model : {{ app('company')['enable_model'] ?? 0 }},
 		};
 		var baseURL = '{{ url('') }}';
         var _csrf_token = '{{ csrf_token() }}';
         var allowUserToPurchaseDiscount = {{ auth()->check() && auth()->user()->can('general.permission.to.apply.discount.to.purchase') ? 1 : 0 }};
         var allowUserToSaleDiscount = {{ auth()->check() && auth()->user()->can('general.permission.to.apply.discount.to.sale') ? 1 : 0; }};
-        var isEnableSecondaryCurrency = {{ auth()->check() && app('company')['is_enable_secondary_currency'] ? 1 : 0; }};
-        var isEnableCarrierCharge = {{ auth()->check() && app('company')['is_enable_carrier_charge'] ? 1 : 0; }};
+		var isEnableSecondaryCurrency = {{ auth()->check() && (app('company')['is_enable_secondary_currency'] ?? false) ? 1 : 0 }};
+        var isEnableCarrierCharge = {{ auth()->check() && (app('company')['is_enable_carrier_charge'] ?? false) ? 1 : 0; }};
 	</script>
     <!-- Clear Cache -->
     <script src="{{ versionedAsset('custom/js/cache.js') }}"></script>

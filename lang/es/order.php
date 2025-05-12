@@ -1,0 +1,41 @@
+<?php
+
+return [
+
+    'info'                      => 'Información del Pedido',
+    'order'                     => 'Pedido',
+    'orders'                    => 'Pedidos',
+    'list'                      => 'Lista de Pedidos',
+    'create'                    => 'Crear Pedido',
+    'add_order'                 => 'Agregar Pedido',
+    'details'                   => 'Detalles del Pedido',
+    'update_order'              => 'Actualizar Pedido',
+    'date'                      => 'Fecha del Pedido',
+    'code'                      => 'Código del Pedido',
+    'status'                    => 'Estado del Pedido',
+    'start_date_and_time'       => 'Fecha y Hora de Inicio',
+    'start_date'                => 'Fecha de Inicio',
+    'start_time'                => 'Hora de Inicio',
+    'start_at'                  => 'Iniciar en',
+    'end_at'                    => 'Finalizar en',
+    'end_date'                  => 'Fecha de Finalización',
+    'end_date_and_time'         => 'Fecha y Hora de Finalización',
+    'end_time'                  => 'Hora de Finalización',
+    'receipt'                   => 'Recibo',
+    'receipt_to'                => 'Recibo a',
+    'date_of_receipt'           => 'Fecha del Recibo',
+    'note'                      => 'Nota del Pedido',
+
+    'timeline'                  => 'Cronología',
+    'order_timeline'            => 'Cronología del Pedido',
+    'created'                   => 'Pedido Creado',
+    'report'                    => 'Reporte del Pedido',
+    'job-status'                => 'Estado del Trabajo',
+    'payments'                  => 'Pagos del Pedido',
+    'payment'                   => 'Pago del Pedido',
+    'total'                     => 'Total de Pedidos',
+    'completed'                 => 'Pedidos Completados',
+    'overview'                  => 'Resumen de Pedidos',
+    'recent_orders'             => 'Pedidos Recientes',
+];
+

@@ -30,13 +30,13 @@
                                     <option value="1">Service</option>
                             </select>
                         </div>
-                        @if(app('company')['show_hsn'])
+                        @if((app('company')['show_hsn'] ?? false))
                         <div class="col-md-6">
                             <x-label for="hsn" name="{{ __('item.hsn') }}" />
                             <x-input type="text" name="hsn" :required="false" value=""/>
                         </div>
                         @endif
-                        @if(app('company')['show_sku'])
+                        @if((app('company')['show_sku'] ?? false))
                         <div class="col-md-6">
                             <x-label for="sku" name="{{ __('item.sku') }}" />
                             <x-input type="text" name="sku" :required="false" value=""/>
@@ -85,11 +85,11 @@
 
                                     <x-radio-block id="regular_tracking" boxName="tracking_type" text="{{ __('item.regular') }}" value="regular" boxType="radio" parentDivClass="fw-bold" :checked=true />
 
-                                    @if(app('company')['enable_batch_tracking'])
+                                    @if((app('company')['enable_batch_tracking'] ?? false))
                                     <x-radio-block id="batch_tracking" boxName="tracking_type" text="{{ __('item.batch_tracking') }}" value="batch" boxType="radio" parentDivClass="fw-bold"/>
                                     @endif
 
-                                    @if(app('company')['enable_serial_tracking'])
+                                    @if((app('company')['enable_serial_tracking'] ?? false))
                                     <x-radio-block id="serial_tracking" boxName="tracking_type" text="{{ __('item.serial_no_tracking') }}" value="serial" boxType="radio" parentDivClass="fw-bold"/>
                                     @endif
 
@@ -135,14 +135,14 @@
                                                     </div>
                                                 </div>
                                                 {{-- Id company is enabled with discount then only show this else hide it --}}
-                                                <div class="col-md-4 {{ app('company')['show_discount'] ? '' : 'd-none' }}">
+                                                <div class="col-md-4 {{ (app('company')['show_discount'] ?? false) ? '' : 'd-none' }}">
                                                     <x-label for="discount_on_sale" name="{{ __('item.discount_on_sale') }}" />
                                                     <div class="input-group mb-3">
                                                         <x-input type="text" name="sale_price_discount" :required="false" additionalClasses='cu_numeric' value=""/>
                                                         <x-dropdown-general optionNaming="amountOrPercentage" selected="" dropdownName='sale_price_discount_type'/>
                                                     </div>
                                                 </div>
-                                                @if(app('company')['show_mrp'])
+                                                @if((app('company')['show_mrp'] ?? false))
                                                 <div class="col-md-4">
                                                     <x-label for="mrp" name="{{ __('item.mrp') }}" />
                                                     <x-input type="text" name="mrp" :required="false" additionalClasses='cu_numeric' value=""/>

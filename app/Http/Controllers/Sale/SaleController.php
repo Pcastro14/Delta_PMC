@@ -112,6 +112,7 @@ class SaleController extends Controller
         $data = [
             'prefix_code' => $prefix->sale,
             'count_id' => ($lastCountId+1),
+            'tax_type' => $defaultTaxType ?? 'default_value',
         ];
         return view('sale.invoice.pos.create',compact('data', 'selectedPaymentTypesArray'));
     }

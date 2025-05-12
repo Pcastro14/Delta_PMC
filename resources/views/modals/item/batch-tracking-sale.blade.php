@@ -13,12 +13,12 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">{{ __('item.batch') }}</th>
-                                    <th class="text-center {{ !app('company')['enable_mfg_date'] ? 'd-none':'' }}">{{ __('item.mfg_date') }}</th>
-                                    <th class="text-center {{ !app('company')['enable_exp_date'] ? 'd-none':'' }}">{{ __('item.exp_date') }}</th>
-                                    <th class="text-center {{ !app('company')['enable_model'] ? 'd-none':'' }}">{{ __('item.model_no') }}</th>
-                                    <th class="text-center {{ !app('company')['show_mrp'] ? 'd-none':'' }}">{{ __('item.mrp') }}</th>
-                                    <th class="text-center {{ !app('company')['enable_color'] ? 'd-none':'' }}">{{ __('item.color') }}</th>
-                                    <th class="text-center {{ !app('company')['enable_size'] ? 'd-none':'' }}">{{ __('item.size') }}</th>
+                                    <th class="text-center {{ !(app('company')['enable_mfg_date'] ?? false) ? 'd-none':'' }}">{{ __('item.mfg_date') }}</th>
+                                    <th class="text-center {{ !(app('company')['enable_exp_date'] ?? false) ? 'd-none':'' }}">{{ __('item.exp_date') }}</th>
+                                    <th class="text-center {{ !(app('company')['enable_model']?? false) ? 'd-none':'' }}">{{ __('item.model_no') }}</th>
+                                    <th class="text-center {{ !(app('company')['show_mrp'] ?? false) ? 'd-none':'' }}">{{ __('item.mrp') }}</th>
+                                    <th class="text-center {{ !(app('company')['enable_color'] ?? false) ? 'd-none':'' }}">{{ __('item.color') }}</th>
+                                    <th class="text-center {{ !(app('company')['enable_size'] ?? false) ? 'd-none':'' }}">{{ __('item.size') }}</th>
                                     <th class="text-center">{{ __('item.in_stock') }}</th>
                                     <th class="text-center">{{ __('item.quantity') }}</th>
                                     <th class="text-center">{{ __('app.action') }}</th>

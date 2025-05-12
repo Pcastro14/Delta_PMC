@@ -81,7 +81,7 @@
 											<th><input class="form-check-input row-select" type="checkbox"></th>
 											<th>{{ __('app.name') }}</th>
 											<th>{{ __('item.code') }}</th>
-											<th class="{{ !app('company')['show_sku']?'d-none':'' }}">{{ __('item.sku') }}</th>
+											<th class="{{ isset(app('company')['show_sku']) && !app('company')['show_sku'] ? 'd-none' : '' }}">{{ __('item.sku') }}</th>
                                             <th>{{ __('item.brand.brand') }}</th>
                                             <th>{{ __('item.category.category') }}</th>
 											<th>{{ __('item.sale_price') }}</th>

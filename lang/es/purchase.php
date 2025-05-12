@@ -1,0 +1,65 @@
+<?php
+
+return [
+        'purchase'                      => 'Compra',
+        'details'                       => 'Detalles de la Compra',
+        'list'                          => 'Lista de Compras',
+        'create'                        => 'Crear Compra',
+        'code'                          => 'Código de Compra',
+        'number'                        => 'Número de Compra',
+        'items'                         => 'Artículos de Compra',
+        'update'                        => 'Actualizar Compra',
+
+        'bill'                          => 'Factura de Compra',
+        'bill_no'                       => 'Número de Factura',
+        'bills'                         => 'Facturas de Compra',
+        'print'                         => 'Imprimir Compra',
+        'convert_to_purchase'           => 'Convertir a Compra',
+        'already_converted'             => 'Orden de Compra ya convertida a Factura de Compra',
+        'return_to'                     => 'Devolver A',
+        'purchase_invoice_number'       => 'Número de Factura de Compra',
+        'debit_note'                    => 'Nota de Débito',
+        'convert_to_return'             => 'Convertir a Devolución',
+        'purchase_bill_number'          => 'Número de Factura de Compra',
+        'convert_to_bill'               => 'Convertir a Factura',
+        'item_purchase'                 => 'Compra de Artículos',
+        'purchase_report'               => 'Informe de Compras',
+        'item_purchase_report'          => 'Informe de Compra de Artículos',
+        'purchase_payment_report'       => 'Informe de Pagos de Compra',
+        'purchase_payment'              => 'Pago de Compra',
+
+        'purchase_without_tax'          => 'Compra Sin Impuesto',
+        'purchase_return_without_tax'   => 'Devolución de Compra Sin Impuesto',
+        'purchase_bills'                => 'Facturas de Compra',
+
+        'return' => [
+                        'return'         => 'Devolución de Compra/Nota de Débito',
+                        'create'        => 'Crear Devolución de Compra',
+                        'details'       => 'Detalles de Devolución de Compra',
+                        'code'          => 'ID de Devolución',
+                        'date'          => 'Fecha de Devolución',
+                        'print'         => 'Imprimir Devolución de Compra',
+                        'update'        => 'Actualizar Devolución de Compra',
+                    ],
+
+        'order' => [
+                        'order'         => 'Orden de Compra',
+                        'number'        => 'Número de Orden',
+                        'code'          => 'ID de Orden',
+                        'status'        => 'Estado de Orden de Compra',
+                        'type'          => 'Tipo de Orden de Compra',
+                        'details'       => 'Detalles de Orden de Compra',
+                        'create'        => 'Crear Orden de Compra',
+                        'list'          => 'Lista de Órdenes de Compra',
+                        'update'        => 'Actualizar Orden de Compra',
+                        'print'         => 'Imprimir Orden de Compra',
+                        'pending'       => 'Órdenes de Compra Pendientes',
+                        'completed'     => 'Órdenes de Compra Completadas',
+                    ],
+
+        'add'                        => 'Agregar Compra',
+        'purchased_items_history'     => 'Historial de Artículos Comprados',
+        'purchased_items'             => 'Artículos Comprados',
+        'purchase_return'             => 'Devolución de Compra',
+
+];

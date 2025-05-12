@@ -64,7 +64,7 @@
                                         <x-label for="address" name="{{ __('app.address') }}" />
                                         <x-textarea name="address" value="{{ $company->address }}" textRows="5"/>
                                     </div>
-                                    @if(app('company')['tax_type'] == 'gst')
+                                    @if((app('company')['tax_type'] ?? false) == 'gst')
                                     <div class="col-md-12">
                                         <x-label for="state_id" name="{{ __('app.state_name') }}" />
                                         <x-dropdown-states selected="{{ $company->state_id }}" dropdownName='state_id'/>

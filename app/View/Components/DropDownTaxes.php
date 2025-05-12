@@ -35,7 +35,7 @@ class DropDownTaxes extends Component
      */
     public function __construct($selected = null)
     {
-        $this->taxType  = app('company')['tax_type'];
+        $this->taxType  = app('company')['tax_type'] ?? 'default_value';
         $this->taxes    = Tax::when($this->taxType == 'no-tax', function($query) {
                                     return $query->oldest()->limit(1);
                                 })->get();

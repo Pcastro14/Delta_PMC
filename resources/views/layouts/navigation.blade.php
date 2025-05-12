@@ -42,7 +42,7 @@
 						</li>
 						@endcan
 
-                        @if(app('company')['is_enable_carrier'])
+                        @if(app('company')['is_enable_carrier'] ?? false)
                             @can('carrier.view')
                             <li class="{{ request()->is(['carrier/*'])? 'mm-active' : '' }}">
                                 <a href="{{ route('carrier.list') }}"><i class='bx bx-radio-circle'></i>{{ __('carrier.carriers') }}</a>
@@ -248,7 +248,7 @@
 				</li>
 				@endcanany
 
-				@if(app('company')['is_enable_crm'])
+				@if(app('company')['is_enable_crm'] ?? false)
 					<li class="menu-label">CRM</li>
 					@canany(['order.create', 'order.view'])
 					<li>
@@ -729,7 +729,7 @@
 
 
 
-                        @if(app('company')['is_enable_crm'])
+                        @if(app('company')['is_enable_crm'] ?? false)
 	                        @can('report.order')
 	                        <li class="{{ request()->is('report/order') ? 'mm-active' : '' }}">
 	                                            <a href="{{ route('report.order') }}"><i class='bx bx-radio-circle'></i>{{ __('order.report') }}</a>
